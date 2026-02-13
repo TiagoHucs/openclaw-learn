@@ -6,12 +6,12 @@ https://www.youtube.com/watch?v=Hy0jRkFrwMc&t=1283s
 
 Criar a imagem:
 ```
-docker build -t clawdbot
+docker build -t openclaw-img .
 ```
 
 Subir o container:
 ```
-docker run -it -p 18790:18789 --name clawdbot clawdbot
+docker run -it -p 18790:18789 --name openclaw-container openclaw-img
 ```
 
 Instalar o OpenClaw
@@ -28,7 +28,7 @@ openclaw gateway --port 18789
 
 acessar outro terminal e executar o TUI:
 ```
-docker exec -it clawdbot bash
+docker exec -it openclaw-container bash
 openclaw tui
 ```
 Esta opção é para chat no terminal
