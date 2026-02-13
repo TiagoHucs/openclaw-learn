@@ -23,6 +23,10 @@ Escolher a API. Neste caso estou usando a API da OpenRouter
 
 Estou usando o modelo openrouter/z-ai/glm-4.5-air:free
 
+Configure skills:
+yes
+
+
 subir gateway
 ```
 openclaw gateway --port 18789
@@ -41,4 +45,3 @@ abrir aplicacao:
 http://127.0.0.1:18789/#token=<token-fornecido-peela-aplicacao>
 ```
 obs: possivelmente localhost
-
