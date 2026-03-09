@@ -9,6 +9,7 @@ RUN apt-get update && apt-get install -y \
     vim \
     ca-certificates \
     git \
+    tmux \
  && rm -rf /var/lib/apt/lists/*
 
 # Diretório de trabalho

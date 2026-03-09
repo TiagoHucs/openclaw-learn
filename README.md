@@ -40,8 +40,40 @@ openclaw tui
 Esta opção é para chat no terminal
 
 
-abrir aplicacao:
+abrir aplicacao será necessario ajustar o arquivo openclaw.json na pasta:
+
+<usuario>/.openclaw
+
+para abrir no editor:
 ```
-http://127.0.0.1:18789/#token=<token-fornecido-peela-aplicacao>
+vim openclaw.json
 ```
-obs: possivelmente localhost
+i para inserir , navegar até gateway> bin> loopback
+trocar por: "Lan"
+esc para sair do modo insert e depois
+:wq
+
+
+ também precisa adicionar a seguinte instrução  "controlUi": { "dangerouslyAllowHostHeaderOriginFallback": true}," se não dara erro ao executar o gateway nas novas versoes.
+
+em vez de usarmos o 18789 vamos usar a porta 18790, pois foi a que configuramos para expor no docker.
+
+```
+http://127.0.0.1:18790/#token=<token-fornecido-peela-aplicacao>
+```
+
+o dashboard aparecerá mas desconectado. 
+neste caso vamos dar permissao ao dispositivo com o comando:
+
+```
+openclaw devices list
+```
+
+aparecerá uma lista de dispositivos , vamos pegar o ID do dispositivo e enviar o comando:
+
+```
+openclaw devices approve "<id do device>"
+```
+
+
+
